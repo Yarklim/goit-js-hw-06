@@ -8,6 +8,10 @@ const btnCreateEl = document.querySelector('[data-create]');
 const btnDestroyEl = document.querySelector('[data-destroy]');
 const divBoxesEl = document.querySelector('#boxes');
 
+// --------- Get Attributte --------
+const minAttrInputEl = inputEl.getAttribute('min');
+const maxAttrInputEl = inputEl.getAttribute('max');
+
 // --------- Listeners -----------
 inputEl.addEventListener('blur', onInputChange);
 btnCreateEl.addEventListener('click', onBtnCreate);
@@ -44,7 +48,7 @@ let inputElValue = 0;
 function onInputChange(event) {
   inputElValue = Number(event.currentTarget.value);
 
-  if (inputElValue < 1 || inputElValue > 100) {
+  if (inputElValue < minAttrInputEl || inputElValue > maxAttrInputEl) {
     alert('Please write number in range of 1-100');
     inputElValue = 0;
     inputEl.value = '';
