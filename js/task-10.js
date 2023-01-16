@@ -49,7 +49,9 @@ function onInputChange(event) {
   inputElValue = Number(event.currentTarget.value);
 
   if (inputElValue < minAttrInputEl || inputElValue > maxAttrInputEl) {
-    alert('Please write number in range of 1-100');
+    alert(
+      `Please write number in range of ${minAttrInputEl}-${maxAttrInputEl}`
+    );
     inputElValue = 0;
     inputEl.value = '';
   }
